@@ -3,6 +3,7 @@
 * Big-O corresponds to runtime, also called time complexity.
 
 #### Helpful Hints
+* `O(sqrt(n))` is different than `O(log n)` because:
 * For recursive runtimes, draw out trees to see how much more work happens with each line
 * Understand the helpful math at the end of CTCI
 * In a **balanced binary search tree**, the max depth is log n, where n is the total number of nodes
