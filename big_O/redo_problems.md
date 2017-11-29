@@ -4,3 +4,4 @@ pg 63 permutations example. Understand it and learn to write it in multiple lang
 pg 64 example 14, check product math in back
 
 check out additional problems for practice
+* appendToNew (pp. 68)
