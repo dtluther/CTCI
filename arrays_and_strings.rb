@@ -10,6 +10,11 @@ end
 # O(n) time complexity worst case
 # O(n) space complexity
 
+# If we cannot use additional data structures, double iteration is O(n^2)
+# If we can modify the input string or sort in place, we can use a sorted
+# string to see if the next character is the same. This will reduce from
+# O(n^2) to O(n log n) for the sort (and then just O(n) for the iteration)
+
 # p is_unique?("test")
 # p is_unique?("abc")
 # p is_unique?("123/.,abc")
