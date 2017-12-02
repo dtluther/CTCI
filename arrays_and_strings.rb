@@ -15,7 +15,7 @@ end
 # string to see if the next character is the same. This will reduce from
 # O(n^2) to O(n log n) for the sort (and then just O(n) for the iteration)
 
-# p is_unique?("test")
+# p is_unique?("sample")
 # p is_unique?("abc")
 # p is_unique?("123/.,abc")
 # p is_unique?("123/.,..")
@@ -69,3 +69,34 @@ end
 # p palindrome_permutation?("car race") # "racecar"
 # p palindrome_permutation?("14145252336") # "12345654321"
 # p palindrome_permutation?("12345")
+
+def one_away(actual, sample)
+    return false if (actual.length - sample.length).abs > 1
+
+    misses = 0
+
+    index_act = 0
+    index_samp = 0
+    while index_samp < sample.length
+        if sample[index_samp] == actual[index_act]
+            index_act += 1
+            index_test += 1
+        elsif sample[index_samp] == actual[index_act + 1]
+            misses += 1
+            return false if misses > 1
+
+            index_act += 2
+            index_sample += 1
+        elsif sample[index_samp + 1] == actual[index_act]
+            missed += 1
+            return false if misses > 1
+
+            index_act += 1
+            index_samp += 2
+        else
+            return false
+        end
+    end
+    
+    true
+end
