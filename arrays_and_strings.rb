@@ -80,23 +80,33 @@ def one_away(actual, sample)
     while index_samp < sample.length
         if sample[index_samp] == actual[index_act]
             index_act += 1
-            index_test += 1
+            index_samp += 1
         elsif sample[index_samp] == actual[index_act + 1]
             misses += 1
-            return false if misses > 1
 
             index_act += 2
-            index_sample += 1
+            index_samp += 1
         elsif sample[index_samp + 1] == actual[index_act]
-            missed += 1
-            return false if misses > 1
+            misses += 1
 
             index_act += 1
+            index_samp += 2
+        elsif sample[index_samp + 1] == actual[index_act + 1]
+            misses += 1
+
+            index_act += 2
             index_samp += 2
         else
             return false
         end
+        
+        return false if misses > 1
     end
     
     true
 end
+
+p one_away("pale", "ple")
+p one_away("pales", "pale")
+p one_away("bale", "pale")
+p one_away("pale", "bake")
