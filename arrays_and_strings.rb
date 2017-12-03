@@ -105,6 +105,8 @@ def one_away(actual, sample)
     
     true
 end
+# O(n) time complexity where n = length of the test string, since we loop it's length once
+# O(3) => O(1) space complexity because we use 3 counter variables
 
 p one_away("pale", "ple")
 p one_away("pales", "pale")
