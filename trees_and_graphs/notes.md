@@ -3,15 +3,15 @@
 ## Types of Trees
 ### Trees vs. Binary Trees
 * **Binary tree**: each node has **UP TO** 2 children
-    * if any node has more than 2 children, it's not a binary tree
+    * If any node has more than 2 children, it's not a binary tree
 * A "leaf" node is a node without children
 
 ### Binary Tree vs. Binary Search Tree
 * **Binary search tree**: binary tree in which all left descendants <= node < all right descendants
-    * keep in mind every node in the tree must follow these rules
-    * can also have left descendants < node <= all right descendants, but less common
-    * under some definitions, there are no duplicates; in others duplicates can be on either side, as mentioned above
-        * make sure to clarify this with the interviewer
+    * Keep in mind every node in the tree must follow these rules
+    * Can also have left descendants < node <= all right descendants, but less common
+    * Under some definitions, there are no duplicates; in others duplicates can be on either side, as mentioned above
+        * Make sure to clarify this with the interviewer
 
 ### Balanced vs. Unbalanced
 * A purpose of a "balanced" tree is to ensure O(log n) runtime for `insert` and `find`. A balanced tree isn't perfectly balanced (all nodes have 2 children), but it's very close. In order to be balanced BST, the BST must follow these rules:
@@ -42,7 +42,7 @@
 * **Complete** binary tree: every level of the tree is fully filled, except for potentially the last level; as far as the last level is filled, it is filled left to right. See below:
 
     ![screen shot 2017-12-07 at 11 25 05 am](https://user-images.githubusercontent.com/15662012/33734494-680bf2c0-db41-11e7-9ab2-670ec268ee10.png)
-    * the only node that is not filled completely has to be filled left to right, as is shown on the right side
+    * The only node that is not filled completely has to be filled left to right, as is shown on the right side
 
 ### Full Binary Trees
 * **Full** binary tree: every node in the tree has either zero or two children; no node has a single child. See below:
@@ -60,46 +60,46 @@
 In order of most common to least common:
 
 ### In-Order Traversal
-* "visit" (often, we will be asked to print) the left branch, then the current node, then the right branch
-    * this means you recursively go go left, current, and right as you go down a branch
+* First "visit" (often, we will be asked to print) the left branch, then the current node, then the right branch
+    * This means you recursively go go left, current, and right as you go down a branch
 * NOTE: when performed on a BST, in-order traversal visites the nodes in ascending order ("in-order")
 
 ### Pre-Order Traversal
-* visit the current node, then left branch, then right branch
-    * the root is always the **first** node visited
-* pre-order traversal visits the current node before the children
+* First visit the current node, then left branch, then right branch
+    * The root is always the **first** node visited
+* Pre-order traversal visits the current node before the children
 
 ### Post-Order Traversal
-* visit the left branch, then right branch, then current node
-    * the root is always the **last** node visited
-* post-order traversal visits the children before the current node
+* First visit the left branch, then right branch, then current node
+    * The root is always the **last** node visited
+* Post-order traversal visits the children before the current node
 
 ## Binary Heaps (Min-Heaps and Max-Heaps)
 * These notes are just for min-heaps; max-heaps are structured essentially the same, but the elements are in descending order rather than ascending order
 * A min-heap is a ***complete*** binary tree (the tree is totally filled, other than the rightmost elements on the last level), where **each** node is smaller than it's children
-    * thus the root is the minimum element of the in the tree:
+    * Thus the root is the minimum element of the in the tree:
 * i.e.
 
     ![screen shot 2017-12-07 at 12 40 31 pm](https://user-images.githubusercontent.com/15662012/33737667-db02eb9e-db4b-11e7-8cbf-fc09f5034cbf.png)
 
 * There are two key operations in min-heap: **insert** and **extract** (specifically **extract_min**)
     * insert:
-        1) always start by inserting an element at the bottom rightmost spot, in order to maintain the completeness property
+        1) Always start by inserting an element at the bottom rightmost spot, in order to maintain the completeness property
         ![screen shot 2017-12-07 at 12 51 17 pm](https://user-images.githubusercontent.com/15662012/33738220-71c4bd2c-db4d-11e7-92af-d5e4c6e52982.png)
 
-        2) then, we "fix" or "heapify-up" the tree by swapping the new element with its parent until we find the appropriate spot to maintain the heap property, which in case of the min-heap is to be <= to its parent and >= to its children
+        2) Then, we "fix" or "heapify-up" the tree by swapping the new element with its parent until we find the appropriate spot to maintain the heap property, which in case of the min-heap is to be <= to its parent and >= to its children
         ![screen shot 2017-12-07 at 12 51 26 pm](https://user-images.githubusercontent.com/15662012/33738224-72c5c680-db4d-11e7-84b4-74873b8e6e4a.png)
         ![screen shot 2017-12-07 at 12 51 46 pm](https://user-images.githubusercontent.com/15662012/33738225-73f1d7f6-db4d-11e7-940c-122d61255c13.png)
 
         * This takes O(log n) time, where n is the number of nodes in the heap
             * log n comes from the depth, so and technically this is log base 2 since it's binary tree
     * extract:
-        1) swap the minimum element (the root) with the last (bottommost, rightmost) element
-            * min element is always at the top in a min-heap
-        2) bubble down, or heapify down, by swapping the new root with its children until the heap property is restored
-            * how do we pick left or right child?
-                * pick the smaller one in order to maintain the min-heap ordering (you would pick the larger one if you wanted to maintain the max heap ordering)
-                    * otherwise, our new parent would again be larger than its other child
+        1) Swap the minimum element (the root) with the last (bottommost, rightmost) element
+            * Min element is always at the top in a min-heap
+        2) Bubble down, or heapify down, by swapping the new root with its children until the heap property is restored
+            * How do we pick left or right child?
+                * Pick the smaller one in order to maintain the min-heap ordering (you would pick the larger one if you wanted to maintain the max heap ordering)
+                    * Otherwise, our new parent would again be larger than its other child
         * e.g., heapifying down after extracting min:
 
             ![screen shot 2017-12-07 at 2 49 23 pm](https://user-images.githubusercontent.com/15662012/33742886-404c4dde-db5f-11e7-9348-7892c063e915.png)
@@ -107,3 +107,16 @@ In order of most common to least common:
             ![screen shot 2017-12-07 at 2 49 48 pm](https://user-images.githubusercontent.com/15662012/33742888-421df036-db5f-11e7-80be-3ab859071315.png)
         
         * this also takes O(log n) time
+
+### Tries (Prefix Trees)
+* A **trie** is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word, for instance.
+* The `*` nodes (a.k.a. null nodes) are often used to indicate complete words (see `*` under M-A-N-Y below)
+    * The implementation of the `*` nodes vary, i.e., they could be a special type of child (such as a **TerminatingTrieNode**, which inherits from **TrieNode**), or we could use a boolean flag **terminates** within the "parent" node
+* A node in a trie could have between `1` and `ALPHABET_SIZE + 1` children (or 0, through `ALPHABET_SIZE` if a boolean flag is used instead of a `*` node)
+* Commonly, a trie is used to store the entire (English) language for quick prefix lookups
+    * While a hash can very quickly look up whether a string is a valid word, it cannot tell us if a string is a prefix of any valid words; but a trie can do this very quickly
+        * How quickly?
+            * O(K), where K is the length of the string
+                * NOTE: this is actually the same runtime as a hash table will take, although we often refer to hash table lookups as O(1) time, this isn't entirely true; it must read through all of the characters in the input, which takes O(K) time in a word lookup
+* Many problems involving lists of words leverage a trie as an optimization. In situations when we search through a tree on related prefixes repeatedly (e.g., M, then M-A, then M-A-N, then M-A-N-Y), we might pass around a reference to the current node in the tree. This will allow us to just check if `Y` is a child of `MAN`, as opposed to starting from the root each time.
+
