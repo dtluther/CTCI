@@ -39,7 +39,7 @@
     ![screen shot 2017-12-07 at 12 06 50 pm](https://user-images.githubusercontent.com/15662012/33736373-37254e94-db47-11e7-9fb9-916a37cacd80.png)
 
 ### Complete Binary Trees
-* **Complete** binary tree: every level of the tree is fully filled, except for potentially the last one; as far as the last level is filled, it is filled left to right. See below:
+* **Complete** binary tree: every level of the tree is fully filled, except for potentially the last level; as far as the last level is filled, it is filled left to right. See below:
 
     ![screen shot 2017-12-07 at 11 25 05 am](https://user-images.githubusercontent.com/15662012/33734494-680bf2c0-db41-11e7-9ab2-670ec268ee10.png)
     * the only node that is not filled completely has to be filled left to right, as is shown on the right side
@@ -75,4 +75,21 @@ In order of most common to least common:
 * post-order traversal visits the children before the current node
 
 ## Binary Heaps (Min-Heaps and Max-Heaps)
-* These notes are just for min-heaps. Max-heaps are structured essentially the same, but the elements are in descending order rather than ascending order.
+* These notes are just for min-heaps; max-heaps are structured essentially the same, but the elements are in descending order rather than ascending order
+* A min-heap is a ***complete*** binary tree (the tree is totally filled, other than the rightmost elements on the last level), where **each** node is smaller than it's children
+    * thus the root is the minimum element of the in the tree:
+* i.e.
+
+    ![screen shot 2017-12-07 at 12 40 31 pm](https://user-images.githubusercontent.com/15662012/33737667-db02eb9e-db4b-11e7-8cbf-fc09f5034cbf.png)
+
+* There are two key operations in min-heap: **insert** and **extract**
+    * insert:
+        1) always start by inserting an element at the bottom rightmost spot, in order to maintain the completeness property
+        ![screen shot 2017-12-07 at 12 51 17 pm](https://user-images.githubusercontent.com/15662012/33738220-71c4bd2c-db4d-11e7-92af-d5e4c6e52982.png)
+
+        2) then, we "fix" or "heapify-up" the tree by swapping the new element with its parent until we find the appropriate spot to maintain the heap property, which in case of the min-heap is to be <= to its parent and >= to its children
+        ![screen shot 2017-12-07 at 12 51 26 pm](https://user-images.githubusercontent.com/15662012/33738224-72c5c680-db4d-11e7-84b4-74873b8e6e4a.png)
+        ![screen shot 2017-12-07 at 12 51 46 pm](https://user-images.githubusercontent.com/15662012/33738225-73f1d7f6-db4d-11e7-940c-122d61255c13.png)
+
+        * This takes O(log n) time, where n is the number of nodes in the heap
+            * log n comes from the depth, so and technically this is log base 2 since it's binary tree
