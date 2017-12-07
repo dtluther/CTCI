@@ -82,7 +82,7 @@ In order of most common to least common:
 
     ![screen shot 2017-12-07 at 12 40 31 pm](https://user-images.githubusercontent.com/15662012/33737667-db02eb9e-db4b-11e7-8cbf-fc09f5034cbf.png)
 
-* There are two key operations in min-heap: **insert** and **extract**
+* There are two key operations in min-heap: **insert** and **extract** (specifically **extract_min**)
     * insert:
         1) always start by inserting an element at the bottom rightmost spot, in order to maintain the completeness property
         ![screen shot 2017-12-07 at 12 51 17 pm](https://user-images.githubusercontent.com/15662012/33738220-71c4bd2c-db4d-11e7-92af-d5e4c6e52982.png)
@@ -93,3 +93,15 @@ In order of most common to least common:
 
         * This takes O(log n) time, where n is the number of nodes in the heap
             * log n comes from the depth, so and technically this is log base 2 since it's binary tree
+    * extract:
+        1) swap the minimum element (the root) with the last (bottommost, rightmost) element
+            * min element is always at the top in a min-heap
+        2) bubble down, or heapify down, by swapping the new root with its children until the heap property is restored
+            * how do we pick left or right child?
+                * pick the smaller one in order to maintain the min-heap ordering (you would pick the larger one if you wanted to maintain the max heap ordering)
+                    * otherwise, our new parent would again be larger than its other child
+        * e.g., heapifying down after extracting min:
+
+            ![screen shot 2017-12-07 at 2 49 23 pm](https://user-images.githubusercontent.com/15662012/33742886-404c4dde-db5f-11e7-9348-7892c063e915.png)
+            ![screen shot 2017-12-07 at 2 49 40 pm](https://user-images.githubusercontent.com/15662012/33742887-4130a3bc-db5f-11e7-95ec-2d463d999352.png)
+            ![screen shot 2017-12-07 at 2 49 48 pm](https://user-images.githubusercontent.com/15662012/33742888-421df036-db5f-11e7-80be-3ab859071315.png)
