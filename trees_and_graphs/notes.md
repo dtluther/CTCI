@@ -73,3 +73,6 @@ In order of most common to least common:
 * visit the left branch, then right branch, then current node
     * the root is always the **last** node visited
 * post-order traversal visits the children before the current node
+
+## Binary Heaps (Min-Heaps and Max-Heaps)
+* These notes are just for min-heaps. Max-heaps are structured essentially the same, but the elements are in descending order rather than ascending order.
