@@ -105,3 +105,5 @@ In order of most common to least common:
             ![screen shot 2017-12-07 at 2 49 23 pm](https://user-images.githubusercontent.com/15662012/33742886-404c4dde-db5f-11e7-9348-7892c063e915.png)
             ![screen shot 2017-12-07 at 2 49 40 pm](https://user-images.githubusercontent.com/15662012/33742887-4130a3bc-db5f-11e7-95ec-2d463d999352.png)
             ![screen shot 2017-12-07 at 2 49 48 pm](https://user-images.githubusercontent.com/15662012/33742888-421df036-db5f-11e7-80be-3ab859071315.png)
+        
+        * this also takes O(log n) time
