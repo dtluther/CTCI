@@ -59,6 +59,17 @@
 ## Binary Tree Traversal
 In order of most common to least common:
 
-### In order traversal
-* to "visit" (often, we will be asked to print) the left branch, then the current node, then the right branch
+### In-Order Traversal
+* "visit" (often, we will be asked to print) the left branch, then the current node, then the right branch
     * this means you recursively go go left, current, and right as you go down a branch
+* NOTE: when performed on a BST, in-order traversal visites the nodes in ascending order ("in-order")
+
+### Pre-Order Traversal
+* visit the current node, then left branch, then right branch
+    * the root is always the **first** node visited
+* pre-order traversal visits the current node before the children
+
+### Post-Order Traversal
+* visit the left branch, then right branch, then current node
+    * the root is always the **last** node visited
+* post-order traversal visits the children before the current node
