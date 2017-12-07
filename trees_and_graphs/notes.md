@@ -1,5 +1,6 @@
-## Notes
+# Notes
 
+## Types of Trees
 ### Trees vs. Binary Trees
 * **Binary tree**: each node has **UP TO** 2 children
     * if any node has more than 2 children, it's not a binary tree
@@ -54,3 +55,10 @@
     ![screen shot 2017-12-07 at 12 13 22 pm](https://user-images.githubusercontent.com/15662012/33736619-21f01288-db48-11e7-9bc0-173e4df84008.png)
 
     * NOTE: perfect trees are rare in interviews and in real life, as a perfect tree must have exactly 2<sup>k</sup> - 1 nodes (where k is the depth, or number of levels). In an interview, never assume the tree is perfect.
+
+## Binary Tree Traversal
+In order of most common to least common:
+
+### In order traversal
+* to "visit" (often, we will be asked to print) the left branch, then the current node, then the right branch
+    * this means you recursively go go left, current, and right as you go down a branch
