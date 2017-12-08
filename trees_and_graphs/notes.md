@@ -113,6 +113,9 @@ In order of most common to least common:
 * The `*` nodes (a.k.a. null nodes) are often used to indicate complete words (see `*` under M-A-N-Y below)
     * The implementation of the `*` nodes vary, i.e., they could be a special type of child (such as a **TerminatingTrieNode**, which inherits from **TrieNode**), or we could use a boolean flag **terminates** within the "parent" node
 * A node in a trie could have between `1` and `ALPHABET_SIZE + 1` children (or 0, through `ALPHABET_SIZE` if a boolean flag is used instead of a `*` node)
+
+    ![screen shot 2017-12-07 at 4 06 48 pm](https://user-images.githubusercontent.com/15662012/33744923-b349e84c-db68-11e7-820b-8ad7e98ba40c.png)
+
 * Commonly, a trie is used to store the entire (English) language for quick prefix lookups
     * While a hash can very quickly look up whether a string is a valid word, it cannot tell us if a string is a prefix of any valid words; but a trie can do this very quickly
         * How quickly?
@@ -120,3 +123,16 @@ In order of most common to least common:
                 * NOTE: this is actually the same runtime as a hash table will take, although we often refer to hash table lookups as O(1) time, this isn't entirely true; it must read through all of the characters in the input, which takes O(K) time in a word lookup
 * Many problems involving lists of words leverage a trie as an optimization. In situations when we search through a tree on related prefixes repeatedly (e.g., M, then M-A, then M-A-N, then M-A-N-Y), we might pass around a reference to the current node in the tree. This will allow us to just check if `Y` is a child of `MAN`, as opposed to starting from the root each time.
 
+### Graphs
+* A tree is a type of graph, but not all graphs are trees
+    * Simply, a tree is a connected graph without cycles 
+* A **graph** is simply a connection of nodes with edges between (some of) them.
+    * Can be either directed (like the following graph) or undirected
+        * Think of a one-way street vs. a two-way street
+    * A graph can cosist of multiple isolated subgraphs
+        * If there is a path to every vertex on the graph, it is called a ***connected*** graph
+    * A graph can also have cycles, or be **acyclic**
+
+        ![screen shot 2017-12-07 at 4 15 27 pm](https://user-images.githubusercontent.com/15662012/33745141-e7c6a4b0-db69-11e7-8a23-fde97105c956.png)
+
+* Two common ways to represent a graph
