@@ -160,3 +160,22 @@ Two common ways to represent a graph:
 * Two most common ways: **breadth-first** search (BFS) and **depth-first** search (DFS)
     * depth-first search: begin at the root (or another arbitrarily selected node) and explore each branch completely (keep moving to a child) before going on to the next branch: deep before wide
     * breadth-first search" begin at the root (or another arbitrarily selected node) and explore each neighbor before going onto any of their children: wide before deep
+    * e.g., assuming neighbors are iterated in numerical order:
+
+        ![screen shot 2017-12-07 at 9 14 56 pm](https://user-images.githubusercontent.com/15662012/33752045-069c5bb2-db94-11e7-9223-d09c8e7d7490.png)
+
+* DFS is often preferred if want to look at every node in the graph (both are fine, but DFS is a bit simpler)
+    * NOTE: pre-order and other forms of tree traversal are forms of DFS
+        * The key difference is that, for a graph, we need to check if the node has been visited lest we get stuck in an infinite loop
+    * DFS is implemented recursively
+* BFS is generally better if we want to find the shortest path (or just any path) between two nodes
+    * BFS implements an iterative solution with a queue
+        * Common mistake is to try to implement recursively
+* A **bi-directional search** is used to find the shortest distance between a source and destination node: when the searches collide, a path has been found
+    ![screen shot 2017-12-07 at 11 28 09 pm](https://user-images.githubusercontent.com/15662012/33755590-57edc854-dba6-11e7-953b-9a44a3080f77.png)
+
+    * To see why this is faster, consider a graph where every node has at most `k` adjacent nodes and the shortest path from node `s` to node `t` has length `d`:
+        * In a tradition BFS, we search up to k nodes in the first "level" of the search. In the second level, k<sup>2</sup> (thus far). We would do this d times, so O(k<sup>d</sup>) nodes.
+        * In bi-directional search, the two searches collide after approximately d/2 levels (the midpoint of the path). The search from s visits approximately k<sup>d/2</sup> nodes, as does the search from t. So that's approximately 2k<sup>d/2</sup>, or O(k<sup>d/2</sup>), nodes total
+        * NOTE: this improvement factor of k<sup>d/2</sup> is significant;
+        * Put another way, before ours system could search "friend of friend" paths, and now it can search "friend of friend of friend of friend" paths, so twice as long
