@@ -135,4 +135,23 @@ In order of most common to least common:
 
         ![screen shot 2017-12-07 at 4 15 27 pm](https://user-images.githubusercontent.com/15662012/33745141-e7c6a4b0-db69-11e7-8a23-fde97105c956.png)
 
-* Two common ways to represent a graph
+Two common ways to represent a graph:
+#### Adjacency List
+* Most common way to representa  graph
+* Every node/vertex stores a list of adjacent nodes/vertices
+    * In an undirected graph, an edge like `(a, b)` would be stored twice: once in `a`'s adjacent vertices and once in `b`s adjacent vertices
+* NOTE: A graph is useful because, unlike in a tree, you can't necessarily reach all the nodes from a single node, as in a case of isolated subraphs or being stuck in a cycle
+    * A graph class is not necessary though, just often cleaner
+        * Could be represented as an array, or hash table like below:
+        
+            ![screen shot 2017-12-07 at 4 33 33 pm](https://user-images.githubusercontent.com/15662012/33745558-63eed5a6-db6c-11e7-90c1-676727002ac1.png)
+        
+#### Adjacency Matrix
+* An NxN boolean matrix (where N is the number of nodes), where a true value at matrix[i][j] indicastes an edge from node i to node j (an integer matrix with 0 and 1 is also often used)
+    * In an undirected graph, the matrix will be symmetric; in a directed graph it will not (necessarily) be
+
+        ![screen shot 2017-12-07 at 4 41 27 pm](https://user-images.githubusercontent.com/15662012/33745730-8101904c-db6d-11e7-902f-cc642bc406b3.png)
+
+    NOTE: The same graph algorithms (BFS, DFS, etc.) can be performed on listes an matrices (although can be slightly less efficient on matricies)
+        * In adjacency lists you can easily iterate through the neighbors of a node
+        * In adjacency matrices, you need to iterate through all the nodes to identify a node's neighbors first
