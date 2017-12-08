@@ -155,3 +155,8 @@ Two common ways to represent a graph:
     NOTE: The same graph algorithms (BFS, DFS, etc.) can be performed on listes an matrices (although can be slightly less efficient on matricies)
         * In adjacency lists you can easily iterate through the neighbors of a node
         * In adjacency matrices, you need to iterate through all the nodes to identify a node's neighbors first
+
+#### Graph Search
+* Two most common ways: **breadth-first** search (BFS) and **depth-first** search (DFS)
+    * depth-first search: begin at the root (or another arbitrarily selected node) and explore each branch completely (keep moving to a child) before going on to the next branch: deep before wide
+    * breadth-first search" begin at the root (or another arbitrarily selected node) and explore each neighbor before going onto any of their children: wide before deep
