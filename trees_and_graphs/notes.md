@@ -102,9 +102,11 @@ In order of most common to least common:
                     * Otherwise, our new parent would again be larger than its other child
         * e.g., heapifying down after extracting min:
 
-            ![screen shot 2017-12-07 at 2 49 23 pm](https://user-images.githubusercontent.com/15662012/33742886-404c4dde-db5f-11e7-9348-7892c063e915.png)
-            ![screen shot 2017-12-07 at 2 49 40 pm](https://user-images.githubusercontent.com/15662012/33742887-4130a3bc-db5f-11e7-95ec-2d463d999352.png)
-            ![screen shot 2017-12-07 at 2 49 48 pm](https://user-images.githubusercontent.com/15662012/33742888-421df036-db5f-11e7-80be-3ab859071315.png)
+            ![screen shot 2018-01-02 at 11 27 52 am](https://user-images.githubusercontent.com/15662012/34496867-1998806c-efb0-11e7-9841-cdd139d107ee.png)
+            * Min element was extracted and then the last element (80) replaced it and became the new root
+
+            ![screen shot 2018-01-02 at 11 32 01 am](https://user-images.githubusercontent.com/15662012/34497024-95a28d92-efb0-11e7-9606-30cdbd52a80d.png)
+            ![screen shot 2018-01-02 at 11 31 21 am](https://user-images.githubusercontent.com/15662012/34496997-82303390-efb0-11e7-8207-fb0a4c9a05a0.png)
         
         * this also takes O(log n) time
 
