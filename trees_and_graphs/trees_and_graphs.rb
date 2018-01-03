@@ -2,6 +2,7 @@ require 'byebug'
 
 class Node
     attr_reader :name, :neighbors
+    attr_accessor :seen
 
     def initialize(name, neighbors_array)
         @name = name
@@ -31,10 +32,10 @@ def routes_between_nodes(source, terminal) # source is a term for start node, te
     # # Naive solution would be to iterate through each of the neighbor's neighbors
     # # of each node until the other node is found or there are no further nodes left
     # # in the neighbors's neighbors
+    # # This is DFS. Are DFS/BFS considered Naive solutions?
     #
     # if source.neighbors.length > 0
     #     source.neighbors.each do |node|
-    #         # debugger
     #         node
     #         return true if node == terminal
     #         return routes_between_nodes(node, terminal)
