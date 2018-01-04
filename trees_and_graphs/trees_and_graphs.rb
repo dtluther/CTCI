@@ -2,12 +2,12 @@ require 'byebug'
 
 class Node
     attr_reader :name, :neighbors
-    attr_accessor :seen
+    attr_accessor :visited
 
     def initialize(name, neighbors_array)
         @name = name
         @neighbors = neighbors_array
-        @seen = false
+        @visited = false
     end
 end
 
@@ -26,7 +26,7 @@ node3 = Node.new("node3", [node4])
 node2 = Node.new("node2", [node3, node6])
 node1 = Node.new("node1", [node2, node3])
 
-graph = Graph.new([node1, node2, node3, node4, node5])
+graph1 = Graph.new([node1, node2, node3, node4, node5])
 
 def routes_between_nodes(source, terminal) # source is a term for start node, terminal for end
     # # Naive solution would be to iterate through each of the neighbor's neighbors
@@ -45,7 +45,20 @@ def routes_between_nodes(source, terminal) # source is a term for start node, te
     # false
 
     # BFS Implementation
-    queue = []
+    neighbor_queue = []
+    source.visited = true
+    neighbor_queue << source
+    
+    while neighbor_queue != empty
+        node = neighbor_queue.shift
+        if node.visited == false
+            node.visited == true
+            node.neighbors.each do |neighbor|
+                neighbor_queue << node if node.visited ==
+    end
+    
+    
+
 
 end
 
