@@ -32,4 +32,10 @@
             * v.neighbors (Ruby) can be a function which computes exactly what you need
                 * Uses less space because it just uses the node's space, rather than saving anything in memory
             * Advantage in that you may not need to find every node, just the necessary ones to reach the state you are looking for
-            
+    * Amount of space is O(V + E), where V is the number of vertices and E is the numbrer of edges (techincally 2E in directed graphs)
+
+### Breadth-First Search Implementation
+* Vista all nodes reachable from given node
+* Achieve O(V + E) runtime
+* Look at nodes reachable in 0 moves, then 1 move, then 2 moves, and so on
+* Careful to avoud duplicates
