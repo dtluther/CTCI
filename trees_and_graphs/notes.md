@@ -34,8 +34,10 @@
     <br>
 
     Unbalanced trees:
-    
+
     ![screen shot 2017-12-07 at 12 07 04 pm](https://user-images.githubusercontent.com/15662012/33736370-35fc12d2-db47-11e7-8793-74f14a889be0.png)
+
+    * A linked list can be an example of an unbalanced tree:
 
     ![screen shot 2017-12-07 at 12 06 50 pm](https://user-images.githubusercontent.com/15662012/33736373-37254e94-db47-11e7-9fb9-916a37cacd80.png)
 
